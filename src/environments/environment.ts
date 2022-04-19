@@ -11,7 +11,7 @@ export const environment = {
     storageBucket: "ionicauthentificationproject.appspot.com",
     messagingSenderId: "879216998823",
     appId: "1:879216998823:web:e43237af95d26ffd04de82"
-  }
+  },
 };
 
 /*

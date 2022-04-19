@@ -30,9 +30,9 @@
               <ion-label>{{f.categorie}}</ion-label>
             </ion-item>
             <div slot="content" *ngFor="let fmt of f.cours">
-              <ion-item class="item_content"  (click)="closeMenu()" lines="none" routerLink={{fmt.url}}>
-                <ion-icon src={{fmt.icon}} slot="start"></ion-icon>
-                <ion-label>{{fmt.title}}</ion-label>
+              <ion-item class="item_content"  (click)="closeMenu()" lines="none" routerLink="{{fmt['url']}}">
+                <ion-icon src="{{fmt['icon']}}" slot="start"></ion-icon>
+                <ion-label>{{fmt['title']}}</ion-label>
               </ion-item>
           </div>
           </ion-accordion>
