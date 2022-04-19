@@ -1,0 +1,44 @@
+<ion-content>
+  <ion-img src="../../assets/images/image2.png"></ion-img>
+  <div class="login-section ion-padding">
+    <div class="heading">
+  <h1>Welcom to</h1>
+  <h1>techFormation</h1>
+  <p>enjoy our services</p>
+    </div>
+    <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
+    <div class="login-form ">
+      <div class="form-input">
+        <ion-icon src="../assets/icons/email.svg" slot="start"></ion-icon>
+        <ion-item>
+          <ion-input type="email" placeholder="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_msg.email">
+          <div *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
+            {{ error.message }}
+          </div>
+        </ng-container>
+      </div>
+      <div class="form-input">
+        <ion-icon src="../assets/icons/lock.svg" slot="start"></ion-icon>
+        <ion-item>
+          <ion-input type="password" formControlName="password" class="form-controll" placeholder="**********" required></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let error of error_msg.password">
+          <div *ngIf="userForm.get('password').hasError(error.type) && (userForm.get('password').dirty || userForm.get('password').touched)">
+            {{ error.message }}
+          </div>
+      </ng-container>
+      </div>
+    </div>
+    
+  <div class="action-button ion-padding">
+    <p class="ion-text-center forgotLog">Forgot your login details? <a (click)="forgotLogging()">Get help logging in</a></p>
+    <ion-button  class="login-button" type="submit" expand="block" [disabled]="!userForm.valid">log in</ion-button>
+    <label class="ion-text-center" color="danger">{{errorMsg}}</label>
+    <p class="ion-text-center">Not registered yet? <a (click)="goToSignup()">Register</a></p>
+  </div>
+</form >
+  </div>
+  </ion-content>
+  

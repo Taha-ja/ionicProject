@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dettails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="menu-header-bg"></div>
+
+<div class="login-section ion-padding">
+  <div class="login-form ion-padding">
+    <div class="form-input">
+      <ion-item>
+        <ion-label position="floating">Nom</ion-label>
+        <ion-input type="email" value={{name}} readonly="true"></ion-input>
+      </ion-item>
+    </div>
+    <div class="form-input">
+      <ion-item>
+        <ion-label position="floating">Formation</ion-label>
+        <ion-input type="email" value={{title}} readonly="true"></ion-input>
+      </ion-item>
+    </div>
+    <div class="form-input">
+      <ion-item>
+        <ion-label position="floating">email</ion-label>
+        <ion-input type="email" value={{email}}></ion-input>
+      </ion-item>
+    </div>
+<div >
+    <div class="cheek">
+      <ion-checkbox (click)="checked()"></ion-checkbox>
+      <ion-label>I accept the rules and rights</ion-label>
+    </div>
+  </div>
+</div>
+<div class="action-button ion-padding">
+  <ion-button  class="button" (click)="addToRecap()" disabled="{{isChecked==false}}" routerLink="/summary">confirm</ion-button>
+</div>
+</div>
+</ion-content>

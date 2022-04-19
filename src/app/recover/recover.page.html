@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-img src="../../assets/images/image2.png"></ion-img>
+  <div class="login-section ion-padding">
+    <div class="heading">
+  <h1>Welcom to</h1>
+  <h1>techFormation</h1>
+  <p>reset your password!</p>
+    </div>
+    <form class="form"  (ngSubmit)="passwordRecover(email)">
+    <div class="login-form ">
+      <div class="form-input">
+        <ion-icon src="../assets/icons/email.svg" slot="start"></ion-icon>
+        <ion-item>
+          <ion-input name="email" type="email" placeholder="enter your email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+      </div>
+
+    </div>
+    
+  <div class="action-button ion-padding">
+    <ion-button  class="login-button" type="submit" expand="block" [disabled]="email==undefined || email==''">submit</ion-button>
+  </div>
+  <p class="ion-text-center">join us? <a (click)="goToSignin()">login</a></p>
+</form >
+  </div>
+  </ion-content>
+  

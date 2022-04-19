@@ -1,0 +1,63 @@
+<ion-content>
+  <ion-img src="../../assets/images/image2.png"></ion-img>
+  <div class="login-section ion-padding" style="padding-top: 0%;">
+    <div class="heading">
+      <h1>Let's register</h1>
+        </div>
+    <form class="form" [formGroup]="userForm" (ngSubmit)="signUp(userForm.value)">
+    <div class="login-form ">
+      <div class="form-input">   
+          <ion-item>
+            <ion-label position="floating">Nom</ion-label>
+            <ion-input  type="text"  formControlName="lname" [(ngModel)]="lname"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Prénom</ion-label>
+            <ion-input type="text"  formControlName="fname" [(ngModel)]="fname"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" formControlName="email"></ion-input>
+          </ion-item>
+          
+          <ng-container *ngFor="let error of error_msg.email">
+            <div style="font-size: 0.8rem;" *ngIf="userForm.get('email').hasError(error.type) && (userForm.get('email').dirty || userForm.get('email').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+      
+          <ion-item>
+            <ion-label position="floating" >Password</ion-label>
+            <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+          </ion-item>
+          
+          <ng-container *ngFor="let error of error_msg.password" >
+              <div style="font-size: 0.8rem;" *ngIf="userForm.get('password').hasError(error.type) && (userForm.get('password').dirty || userForm.get('password').touched)">
+                {{ error.message }}
+              </div>
+          </ng-container>
+          <ion-item>
+            <ion-label position="floating" >Confirm your Password</ion-label>
+            <ion-input type="password" formControlName="confirmPassword"  name="confirmPassword"  class="form-controll" required></ion-input>
+          </ion-item>
+          <ng-container *ngFor="let error of error_msg.confirmPassword">
+            <div *ngIf="userForm.get('confirmPassword').hasError(error.type) && (userForm.get('confirmPassword').dirty || userForm.get('confirmPassword').touched)" style="font-size: 0.8rem;">
+              {{ error.message }}
+            </div>
+          
+        </ng-container>
+        <div *ngIf="isNotEqual" style="font-size: 0.8rem;">you should enter the same password!</div>
+      </div>
+    </div>
+  <div class="action-button ion-padding">
+    <ion-button type="submit" expand="block" [disabled]="!userForm.valid">Register</ion-button>
+    
+    <label class="ion-text-center" color="danger">{{errorMsg}}</label>
+    <label class="ion-text-center" color="success">{{successMsg}}</label>
+  </div>
+</form >
+<p class="ion-text-center">Already registered? <a (click)="goToLogin()">Login</a></p>
+  </div>
+  </ion-content>
+  

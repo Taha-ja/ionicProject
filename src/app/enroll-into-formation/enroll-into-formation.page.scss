@@ -1,0 +1,131 @@
+ion-img {
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.login-section {
+    height: 70vh;
+    width: 100%;
+    max-width: 450px;
+    right: 0;
+    left: 0;
+    bottom: 2%;
+    position: fixed;
+    margin: auto;
+    border-radius: 46px;
+
+    .heading {
+        margin-top: 20px;
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: bolder;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #7b7b7b;
+        }
+    }
+
+    .login-form {
+        .form-input {
+            position: relative;
+            margin-bottom: 10px;
+
+            ion-item:part(native) {
+                padding-left: 0;
+            }
+
+            ion-icon {
+                position: absolute;
+                top: 25px;
+                z-index: 2;
+                font-size: 1.2rem;
+                left: 5px;
+            }
+
+            ion-label {
+                position: absolute;
+                font-weight: bolder;
+                font-size: 0.8rem;
+                top: 12px;
+            }
+
+            ion-input {
+                font-size: 0.9rem;
+                --padding-top: 36px;
+                color: #000;
+            }
+        }
+    }
+
+    .action-button {
+        text-align: center;
+
+        .button {
+            // --background:linear-gradient(90deg,#7590d6 0%,#4d71d7 100%);
+            --background: linear-gradient(90deg, #f9b801 0%, #f96c01bd 100%);
+            width: 100%;
+            font-weight: bold;
+            --border-radius: 55px;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #7b7b7b;
+        }
+    }
+}
+
+.menu-header-bg {
+    height: 130px;
+    width: 350px;
+    background: #7590d6;
+    background: linear-gradient(90deg, #f9b801 0%, #f96c01bd 100%);
+    // background:linear-gradient(90deg,#7590d6 0%,#4d71d7 100%);
+    box-shadow: 0px 1px 10px rgba(98, 140, 255, 0.5);
+    transform: rotate(-15deg);
+    border-radius: 10px 10px 10px 50px;
+    margin-left: -18px;
+    margin-top: -50px;
+    margin-bottom: 60px;
+}
+
+.header-content {
+
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+
+    ion-label {
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+.cheek {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+
+    ion-label {
+
+        font-size: 0.8rem;
+    }
+}
+
+ion-checkbox {
+    margin-left: 18px;
+    margin-right: 10px;
+    --background-checked: #FFFFFF;
+    --checkmark-color: #f9b801;
+    --border-color-checked: #f9b801;
+}

@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dettails</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="desktop">
+  <div >
+  <div class="topPage" >
+    <h1>{{title}}</h1>
+    <h5>{{description}}</h5>
+    <div class="foot">
+      <div><strong> Durée:</strong> {{time}}</div>
+      <div><strong>prix</strong>: {{price}}dh</div>
+  </div>
+  <img src={{image}} class="imageLeft">
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>What we Learn:</ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row >
+    <ion-card-content *ngFor="let axe of arr" lines="none" size-xs="12">
+      <ion-icon src="../../../assets/icons/icon_tick.svg" slot="start"style="margin-right:10px;"></ion-icon>
+      {{axe}}
+    </ion-card-content>
+      </ion-row>
+      <!-- <ion-button fill="outline">rejoindre nous</ion-button> -->
+      <ion-button fill="outline" [disabled]="isExist==true">{{buttonString}}</ion-button>
+    </ion-grid>
+  </ion-card>
+</div>
+</ion-content>
+<ion-content class="mobile">
+    <ion-card >
+      <ion-img src={{image}}></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{description}}
+      </ion-card-content>
+      <ion-footer>
+        <ion-row>
+          <ion-col center text-center>
+            <div class="divCard">
+              <div><strong> Durée:</strong> {{time}}</div>
+            </div>
+          </ion-col>
+          <ion-col center text-center>
+            <div class="divCard">
+              <div><strong>prix</strong>: {{price}}dh</div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-footer>
+    </ion-card>
+    <ion-card class="mobile">
+      <ion-card-header>
+        <ion-card-title><span>What we Learn:</span></ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngFor="let axe of arr">
+        <ion-icon src="../../../assets/icons/icon_tick.svg" slot="start"style="margin-right:10px;"></ion-icon>
+        {{axe}}
+      </ion-card-content>
+      <ion-row>
+      <!-- <ion-button fill="outline"  [routerLink]='["/","enroll-into-formation",id,title,image]'>rejoindre nous</ion-button> -->
+      <ion-button fill="outline" [disabled]="isExist==true" [routerLink]='["/","enroll-into-formation",id,title,image]' >{{buttonString}}</ion-button>
+    </ion-row>
+    </ion-card>
+  </ion-content>

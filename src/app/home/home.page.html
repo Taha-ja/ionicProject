@@ -1,0 +1,52 @@
+<ion-header >
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button (click)="getName()"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+<ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+<ion-grid>
+<ion-row *ngFor="let it of items">
+  <ion-col *ngFor="let item of it | async ;let i= index" lines="none" size-xs="12" size-md="6" size-xl="3">
+    <ion-card *ngIf="(i)%number==0" >
+      <ion-img src={{item.image}} alt="ion"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{item.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{item.description}}
+      </ion-card-content>
+      <ion-footer>
+        <ion-row>
+          <ion-col center text-center>
+            <div class="divCard">
+              <ion-icon src="../../../assets/icons/time_icon.svg" slot="start" style="margin-right:10px;"></ion-icon>
+              <div>{{item.time}}</div>
+            </div>
+          </ion-col>
+          <ion-col center text-center>
+            <div class="divCard">
+              <ion-icon src="../../../assets/icons/star-icon.svg" slot="start"style="margin-right:10px;" ></ion-icon>
+              <div>{{item.stars}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ion-footer>
+      <ion-button fill="outline" [routerLink]='["/","dettails",item.id]' (click)="getName()">more</ion-button>
+      <div class="blank"></div>
+    </ion-card> 
+  </ion-col>
+</ion-row>
+
+</ion-grid>
+
+</ion-content>

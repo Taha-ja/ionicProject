@@ -1,0 +1,59 @@
+<ion-app>
+  <ion-menu contentId="main">
+    <!-- <ion-header>
+      <ion-toolbar class="t-bar" color="primary">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header> -->
+    <ion-content>
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+          </ion-refresher>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <!-- <img src="../assets/images/formation.png" alt=""> -->
+        <img src="../assets/images/OIP.jfif" alt="">
+        <ion-label>
+          <h2 class="name">{{name}}</h2> 
+        </ion-label>
+      </div>
+      <ion-list>
+        <ion-item lines="none" routerLink="/home" (click)="closeMenu()" slot="header" toggle-icon="">
+          <ion-icon src="../assets/icons/house.svg" slot="start"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-item>
+        <!-- Languages -->
+        <ion-accordion-group>
+          <ion-accordion *ngFor="let f of listForm">
+            <ion-item slot="header" lines="none">
+              <ion-icon src={{f.icon}} slot="start"></ion-icon>
+              <ion-label>{{f.categorie}}</ion-label>
+            </ion-item>
+            <div slot="content" *ngFor="let fmt of f.cours">
+              <ion-item class="item_content"  (click)="closeMenu()" lines="none" routerLink={{fmt.url}}>
+                <ion-icon src={{fmt.icon}} slot="start"></ion-icon>
+                <ion-label>{{fmt.title}}</ion-label>
+              </ion-item>
+          </div>
+          </ion-accordion>
+        </ion-accordion-group>
+          <ion-item routerLink="/summary" (click)="closeMenu()" slot="header" lines="none">
+            <ion-icon src="../assets/icons/cart-check.svg" slot="start"></ion-icon>
+            <ion-label>My courses</ion-label>
+          </ion-item>
+
+        <!-- <div class="myFit"></div> -->
+        <ion-item lines="none" (click)="signOut()">
+          <ion-icon src="../assets/icons/sign_out_icon.svg" slot="start"  ></ion-icon>
+              <ion-label>Sign out</ion-label>
+            </ion-item>
+    </ion-list>
+    </ion-content>
+  </ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>
+
+
+
+
+

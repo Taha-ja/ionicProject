@@ -1,0 +1,53 @@
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-button{
+        width: 98%;
+    }
+    .desktop{
+        display: none;
+    }
+    strong{
+        color: #000;
+        margin-left: 10px;
+    }
+    }
+@media (min-width: 769px) {
+    .mobile{
+        display: none;
+    }
+    .topPage{
+        display: flex;
+        background: #333C83;
+        color: aliceblue;
+        flex-direction: column;
+        height: 250px;
+        padding-top: 3%;
+        padding-left: 18%;
+        margin-bottom: 5%;
+    }
+    h5{
+        color: rgba(240, 248, 255, 0.864);
+    }
+    .foot{
+        display: flex;
+        flex-direction: row;
+    }
+    .foot div{
+        padding-right: 15px;
+    
+    }
+    .imageLeft{
+        position: absolute;
+        left: 70px;
+        top: 50px;
+        width:150px;
+        height: 150px;
+        border-radius: 50%;
+        box-shadow:0 0 50px #DFDFDE;
+        // border:2px solid #fff;
+    }
+ion-button{
+    margin-left:85%;
+}
+    
+}

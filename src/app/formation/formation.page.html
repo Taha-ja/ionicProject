@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="custom">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{param}} courses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+<ion-row >
+  <ion-col *ngFor="let item of items | async" lines="none" size-xs="12" size-md="6" size-xl="3">
+    <ion-card >
+
+      <ion-img src={{item.image}}></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{item.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{item.description}}
+      </ion-card-content>
+      <ion-footer>
+        <ion-row>
+          <ion-col center text-center>
+            <div class="divCard">
+              <ion-icon src="../../../assets/icons/creator-icon.svg" slot="start"style="margin-right:10px;"></ion-icon>
+              <div>{{item.creator}}</div>
+            </div>
+          </ion-col>
+          <ion-col center text-center>
+            <div class="divCard">
+              <ion-icon src="../../../assets/icons/time_icon.svg" slot="start" style="margin-right:10px;"></ion-icon>
+              <div>{{item.time}}</div>
+            </div>
+          </ion-col>
+          <ion-col center text-center>
+            <div class="divCard">
+              <ion-icon src="../../../assets/icons/star-icon.svg" slot="start"style="margin-right:10px;" ></ion-icon>
+              <div>{{item.stars}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ion-footer>
+      <ion-button fill="outline" [routerLink]='["/","dettails",param,item.id]'>more</ion-button>
+      <div class="blank"></div>
+    </ion-card> 
+  </ion-col>
+</ion-row>
+
+</ion-grid>
+
+</ion-content>
+
